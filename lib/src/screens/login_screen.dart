@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
           emailField(bloc),
           passwordField(bloc),
           Container(margin: EdgeInsets.only(top: 25.0)),
-          submitBtn(),
+          submitBtn(bloc),
         ],
       ),
     );
@@ -55,11 +55,23 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget submitBtn() {
-    return RaisedButton(
-      child: Text('Login'),
-      color: Colors.blue,
-      onPressed: () {},
+  Widget submitBtn(Bloc bloc) {
+    return StreamBuilder(
+      stream: bloc.submitValid,
+      builder: (context, snapshot) {
+        return RaisedButton(
+          child: Text('Login'),
+          color: Colors.blue,
+          /*onPressed: snapshot.hasData ? () {
+            // instead of this print we should invoke / dispatch
+            // function using subjects
+            print('input valid');
+
+          } : null,*/
+          // rxdart subject way
+          onPressed: snapshot.hasData ? bloc.submit : null,
+        );
+      },
     );
   }
 }
