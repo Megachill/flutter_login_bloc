@@ -1,16 +1,17 @@
 # login_bloc
 
-A new Flutter project.
+Example project showing samples of how to implement the bloc pattern
+by building a login system _(no http or anything)_
 
-## Getting Started
+This example is purely for learning purposes...  
+___
+### Check the branches
+You will find 2 branches in the project that really matter
 
-This project is a starting point for a Flutter application.
+1. `global_bloc` which represents the idea of implementing a global single instance of the bloc
+2. `scoped_bloc` which represents the more scalable approach to having instances of bloc in multiple locations
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h3 style="color: red;">
+Please note, since Flutter is still under heavy development, the community and the developers,
+have not yet decided on what the best approach to state management is, inside of flutter.
+</h3>
