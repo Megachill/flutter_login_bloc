@@ -12,6 +12,6 @@ You will find 2 branches in the project that really matter
 2. `scoped_bloc` which represents the more scalable approach to having instances of bloc in multiple locations
 
 <h3 style="color: red;">
-Please note, since Flutter is still under heavy development, no one is entirely sure yet on how to properly 
-implement state management into flutter apps properly.
+Please note, since Flutter is still under heavy development, the community and the developers,
+have not yet decided on what the best approach to state management is, inside of flutter.
 </h3>
