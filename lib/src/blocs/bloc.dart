@@ -5,8 +5,8 @@ import 'validators.dart';
 
 class Bloc extends Object with Validators {
 //class Bloc with Validators {
-  final _email = StreamController<String>.broadcast();
-  final _password = StreamController<String>.broadcast();
+  final _email = BehaviorSubject<String>();
+  final _password = BehaviorSubject<String>();
 
   // get data from stream
   Stream<String> get email => _email.stream.transform(validateEmail);
@@ -19,7 +19,12 @@ class Bloc extends Object with Validators {
   Function(String) get changePassword => _password.sink.add;
 
   submit() {
+    final validEmail = _email.value;
+    final validPassword = _password.value;
 
+    // here you'd submit to API / Server
+    print('Email is $validEmail');
+    print('Password is $validPassword');
   }
 
   // cleanup
